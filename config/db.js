@@ -4,7 +4,7 @@ import db_config from "./config.js";
 
 dotenv.config();
 
-const env = process.NODE_ENV || "development";
+const env = process.env.NODE_ENV || "development";
 const config = db_config[env];
 
 const sequelize = new Sequelize(
