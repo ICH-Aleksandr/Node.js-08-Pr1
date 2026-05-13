@@ -1,0 +1,33 @@
+08-Pr Task1
+
+Создайте модель User с полями:
+id – integer, autoIncrement, primaryKey
+name – string, allowNull: false
+email – string, allowNull: false, unique: true, валидация на email формат
+age – integer, валидация: min 18, max 120
+isActive – boolean, defaultValue: true
+createdAt – date, defaultValue: now
+
+Создайте Express сервер со следующими CRUD маршрутами:
+POST /users – создание пользователя
+Принимает JSON: { name, email, age }
+При ошибках валидации возвращает 400 с деталями
+
+GET /users – получение всех пользователей
+*Поддерживает query-параметры: ?limit=10&offset=0
+*Поддерживает фильтрацию: ?isActive=true
+
+GET /users/:id – получение пользователя по ID
+Если пользователь не найден – 404
+
+PUT /users/:id – полное обновление пользователя
+Обновляет все поля
+
+PATCH /users/:id – частичное обновление
+Обновляет только переданные поля
+
+DELETE /users/:id – удаление пользователя
+
+Добавьте обработку ошибок
+
+Запустите сервер на порту 3333
